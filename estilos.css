@@ -1,0 +1,532 @@
+:root {
+  --ink: #2a1c14;
+  --muted: #6d5848;
+  --cream: #f6efe6;
+  --paper: #fffaf5;
+  --line: #eadfd2;
+  --orange: #e25b1a;
+  --deep: #9c2f0c;
+  --stamp: #c4381a;
+  --wa: #127a4d;
+  --shadow: 0 18px 50px rgba(70, 32, 12, 0.12);
+  --serif: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --sans: "Outfit", "Avenir Next", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% -10%, #ffd7b8 0, transparent 36%),
+    radial-gradient(circle at 100% 0, #ffe7c7 0, transparent 28%),
+    var(--cream);
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+.saltar {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  background: var(--ink);
+  color: white;
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  z-index: 5;
+}
+
+.saltar:focus {
+  top: 0.7rem;
+}
+
+.barra {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 6vw;
+  background: var(--deep);
+  color: #fff6ec;
+}
+
+.barra p {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.barra-cta {
+  flex: none;
+  text-decoration: none;
+  background: white;
+  color: var(--deep);
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+}
+
+main {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding-bottom: 6.5rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 3.2rem 0 2rem;
+}
+
+.sello {
+  display: inline-block;
+  margin: 0 0 0.8rem;
+  padding: 0.35rem 0.7rem;
+  border: 2px solid var(--stamp);
+  color: var(--stamp);
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  transform: rotate(-2deg);
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 650;
+  font-size: clamp(4.4rem, 9vw, 7.4rem);
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+}
+
+.lead {
+  font-size: 1.18rem;
+  max-width: 38rem;
+}
+
+.senas {
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.senas li {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.7rem 0.9rem 0.7rem 2.3rem;
+  position: relative;
+  font-weight: 500;
+}
+
+.senas li::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--orange);
+  position: absolute;
+  left: 0.95rem;
+  top: 1.05rem;
+}
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  font: inherit;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.9rem 1.15rem;
+}
+
+.boton-wa {
+  background: var(--wa);
+  color: white;
+}
+
+.boton-wa:hover,
+.flotante:hover,
+.boton-oscuro:hover {
+  filter: brightness(1.08);
+}
+
+.boton-suave {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid #d9c8b6;
+}
+
+.boton-oscuro {
+  background: var(--ink);
+  color: #fff6ec;
+  white-space: nowrap;
+}
+
+.aviso-copia {
+  color: var(--wa);
+  font-weight: 600;
+}
+
+.retrato {
+  margin: 0;
+}
+
+.retrato img {
+  width: 100%;
+  height: min(72vh, 680px);
+  object-fit: cover;
+  object-position: 30% 50%;
+  border-radius: 28px 28px 80px 28px;
+  box-shadow: var(--shadow);
+  border: 8px solid white;
+}
+
+.retrato figcaption {
+  margin-top: 0.7rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.salud,
+.donde,
+.cierre,
+.galeria {
+  margin-top: 1.2rem;
+}
+
+.salud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  background: #fff1e4;
+  border: 1px solid #f0c7a4;
+  border-left: 8px solid var(--orange);
+  border-radius: 22px;
+  padding: 1.4rem 1.5rem;
+}
+
+.etiqueta {
+  margin: 0 0 0.25rem;
+  color: var(--deep);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+h2 {
+  margin: 0 0 0.4rem;
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.salud p,
+.donde p,
+.cierre p,
+.seccion-encabezado p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 42rem;
+}
+
+.seccion-encabezado {
+  margin: 2.4rem 0 1rem;
+}
+
+.mosaico {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  grid-template-rows: 240px 240px;
+  gap: 0.8rem;
+}
+
+.foto {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.foto:first-child {
+  grid-row: 1 / span 2;
+}
+
+.foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.foto:hover img,
+.foto:focus-visible img {
+  transform: scale(1.04);
+}
+
+.foto:focus-visible,
+.boton:focus-visible,
+.barra-cta:focus-visible,
+.telefono:focus-visible,
+.flotante:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+.donde {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  background: var(--paper);
+  border-radius: 28px;
+  padding: 1.8rem;
+  border: 1px solid var(--line);
+  margin-top: 2rem;
+}
+
+.datos {
+  margin: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.datos div {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0.6rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.datos dt {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.datos dd {
+  margin: 0;
+  font-weight: 650;
+}
+
+.datos a {
+  color: var(--deep);
+}
+
+.cierre {
+  text-align: center;
+  padding: 3.2rem 1rem 1rem;
+}
+
+.cierre h2 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+}
+
+.cierre p {
+  margin: 0.6rem auto 0;
+}
+
+.telefono {
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+  color: var(--deep);
+}
+
+.horario {
+  margin-top: 0.3rem !important;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 0 1rem 7rem;
+  font-size: 0.9rem;
+}
+
+.flotante {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  transform: translateY(160%);
+  background: var(--wa);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.9rem 1.15rem;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(18, 122, 77, 0.35);
+  white-space: nowrap;
+  transition: transform 0.25s ease;
+}
+
+.flotante.visible {
+  transform: translateY(0);
+}
+
+.visor {
+  width: min(920px, calc(100% - 1.5rem));
+  border: 0;
+  padding: 0.6rem;
+  border-radius: 18px;
+  background: #1b120e;
+}
+
+.visor::backdrop {
+  background: rgba(28, 16, 10, 0.82);
+}
+
+.visor img {
+  width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.cerrar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: 0;
+  background: white;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  cursor: pointer;
+}
+
+@media (max-width: 840px) {
+  .barra {
+    padding-inline: 1rem;
+  }
+
+  .barra p {
+    font-size: 0.82rem;
+  }
+
+  .hero,
+  .donde,
+  .salud {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .salud {
+    display: grid;
+  }
+
+  .hero {
+    gap: 1.4rem;
+    padding-top: 1.6rem;
+  }
+
+  .retrato {
+    order: -1;
+  }
+
+  .retrato img {
+    height: 58vw;
+    min-height: 240px;
+    max-height: 380px;
+    border-width: 5px;
+    object-position: 28% 46%;
+  }
+
+  .mosaico {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 220px 180px 180px;
+  }
+
+  .foto:first-child {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    height: 280px;
+  }
+
+  .datos div {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+
+  h1 {
+    font-size: 4.6rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .cierre {
+    padding-bottom: 5rem;
+  }
+}
+
+@media print {
+  .barra,
+  .flotante,
+  .acciones,
+  .boton,
+  .saltar,
+  footer {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  .retrato img {
+    height: 320px;
+  }
+}
