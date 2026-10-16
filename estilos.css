@@ -212,12 +212,13 @@ h1 {
 
 .retrato img {
   width: 100%;
-  height: min(72vh, 680px);
-  object-fit: cover;
-  object-position: 30% 50%;
+  height: auto;
+  object-fit: contain;
+  object-position: center top;
   border-radius: 28px 28px 80px 28px;
   box-shadow: var(--shadow);
   border: 8px solid white;
+  background: #efe4d6;
 }
 
 .retrato figcaption {
@@ -277,8 +278,8 @@ h2 {
 
 .mosaico {
   display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr;
-  grid-template-rows: 240px 240px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 210px;
   gap: 0.8rem;
 }
 
@@ -292,14 +293,24 @@ h2 {
 }
 
 .foto:first-child {
-  grid-row: 1 / span 2;
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
 .foto img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.35s ease;
+}
+
+.foto img.encuadre-derecha {
+  object-position: 78% 42%;
+}
+
+.foto img.encuadre-abajo {
+  object-position: center 82%;
 }
 
 .foto:hover img,
@@ -314,6 +325,18 @@ h2 {
 .flotante:focus-visible {
   outline: 3px solid var(--orange);
   outline-offset: 3px;
+}
+
+.video-bloque video {
+  display: block;
+  width: min(100%, 420px);
+  height: auto;
+  max-height: 72vh;
+  margin-inline: auto;
+  background: #1b120e;
+  border-radius: 24px;
+  border: 8px solid white;
+  box-shadow: var(--shadow);
 }
 
 .donde {
@@ -474,22 +497,18 @@ footer {
   }
 
   .retrato img {
-    height: 58vw;
-    min-height: 240px;
-    max-height: 380px;
     border-width: 5px;
-    object-position: 28% 46%;
   }
 
   .mosaico {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 220px 180px 180px;
+    grid-auto-rows: 180px;
   }
 
   .foto:first-child {
     grid-column: 1 / -1;
     grid-row: auto;
-    height: 280px;
+    height: 260px;
   }
 
   .datos div {
@@ -527,6 +546,7 @@ footer {
   }
 
   .retrato img {
-    height: 320px;
+    max-height: 420px;
+    object-fit: contain;
   }
 }
